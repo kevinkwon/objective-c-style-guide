@@ -1,18 +1,18 @@
-# The official raywenderlich.com Objective-C style guide.
+# The official Tuck & Company Inc. Objective-C style guide.
 
-This style guide outlines the coding conventions for raywenderlich.com.
+이 스타일 가이드는 Tuck and Company Inc.의 코딩 컨벤션을 제시합니다.
+
+이 가이드는 [The official raywenderlich.com Objective-C style guide.](https://github.com/raywenderlich/objective-c-style-guide) 를 참조하였습니다.
+
+## 업데이트
+* 2016. 7. 24 첫 제작
 
 ## Introduction
+사내 Objective-C프로젝트를 수행함에 있어 코딩 스타일을 통일시키고, 가독성을 증진하여 유지보수를 쉽게 함을 목표로 한다.
 
-The reason we made this style guide was so that we could keep the code in our books, tutorials, and starter kits nice and consistent - even though we have many different authors working on the books.
-
-This style guide is different from other Objective-C style guides you may see, because the focus is centered on readability for print and the web. Many of the decisions were made with an eye toward conserving space for print, easy legibility, and tutorial writing.
-
-## Credits
-
-The creation of this style guide was a collaborative effort from various raywenderlich.com team members under the direction of Nicholas Waynik.  The team includes: [Soheil Moayedi Azarpour](https://github.com/moayes), [Ricardo Rendon Cepeda](https://github.com/ricardo-rendoncepeda), [Tony Dahbura](https://github.com/tdahbura), [Colin Eberhardt](https://github.com/ColinEberhardt), [Matt Galloway](https://github.com/mattjgalloway), [Greg Heo](https://github.com/gregheo), [Matthijs Hollemans](https://github.com/hollance), [Christopher LaPollo](https://github.com/elephantronic), [Saul Mora](https://github.com/casademora), [Andy Pereira](https://github.com/macandyp), [Mic Pringle](https://github.com/micpringle), [Pietro Rea](https://github.com/pietrorea), [Cesare Rocchi](https://github.com/funkyboy), [Marin Todorov](https://github.com/icanzilb), [Nicholas Waynik](https://github.com/ndubbs), and [Ray Wenderlich](https://github.com/raywenderlich)
-
-We would like to thank the creators of the [New York Times](https://github.com/NYTimes/objective-c-style-guide) and [Robots & Pencils'](https://github.com/RobotsAndPencils/objective-c-style-guide) Objective-C Style Guides.  These two style guides provided a solid starting point for this guide to be created and based upon.
+## 저작
+[Kevin Kwon](https://github.com/kevinkwon)
+[Jay Park](mailto:jay@hellomarket.com)
 
 ## Background
 
@@ -56,22 +56,22 @@ Here are some of the documents from Apple that informed the style guide. If some
 
 ## Language
 
-US English should be used.
+영어를 기본으로 사용합니다.
 
 **Preferred:**
-```objc
+```
 UIColor *myColor = [UIColor whiteColor];
 ```
 
 **Not Preferred:**
-```objc
-UIColor *myColour = [UIColor whiteColor];
+```
+UIColor *나의컬러 = [UIColor whiteColor];
 ```
 
 
-## Code Organization
+## Code-organization
 
-Use `#pragma mark -` to categorize methods in functional groupings and protocol/delegate implementations following this general structure.
+다음과 같이 인반적인 상황에서 기능적 그룹짓거나 protocol/delegate 구현에서 메소드들을 분류하기 위해서 `#pragma mark -` 를 사용합니다.
 
 ```objc
 #pragma mark - Lifecycle
@@ -111,6 +111,55 @@ Use `#pragma mark -` to categorize methods in functional groupings and protocol/
 #pragma mark - NSObject
 
 - (NSString *)description {}
+```
+
+### IBAction Sample
+
+**Preferred:**
+
+```objc
+#pragma mark - IBAction
+```
+
+**Not Preferred:**
+
+```objc
+#pragma mark IBAction // '-'을 붙여야 한다.
+#pragma mark IBActions // 복수형을 사용하지 않는다.
+#pragma mark - IBAction Method // Method를 붙이지 않는다.
+```
+
+### Public Method Sample
+
+
+**Preferred:**
+
+```objc
+#pragma mark - Public
+```
+
+**Not Preferred:**
+
+```objc
+#pragma mark Public // '-'을 붙여야 한다.
+#pragma mark Publics // 복수형을 사용하지 않는다.
+#pragma mark Public Method // 'Method'를 붙이지 않는다.
+```
+
+### Private Method Sample
+
+**Preferred:**
+
+```objc
+#pragma mark - Private
+```
+
+**Not Preferred:**
+
+```objc
+#pragma mark Private
+#pragma mark Privates
+#pragma mark Private Method
 ```
 
 ## Spacing
